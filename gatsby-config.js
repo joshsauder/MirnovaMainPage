@@ -12,27 +12,13 @@ const plugins = [
   {
     resolve: 'gatsby-plugin-manifest',
     options: {
-      name: `${about.name} Portfolio`,
+      name: `${about.name}`,
       short_name: about.name,
       start_url: '/',
       background_color: about.colors.background,
       theme_color: about.colors.primary,
       display: 'minimal-ui',
       icon: 'media/icon.png',
-    },
-  },
-  'gatsby-plugin-offline',
-  {
-    resolve: 'gatsby-source-contentful',
-    options: {
-      spaceId: SPACE_ID,
-      accessToken: ACCESS_TOKEN,
-    },
-  },
-  {
-    resolve: 'gatsby-source-medium',
-    options: {
-      username: about.mediumUser || '@medium',
     },
   },
 ];
@@ -49,7 +35,6 @@ if (ANALYTICS_ID) {
 module.exports = {
   plugins,
   siteMetadata: {
-    isMediumUserDefined: !!about.mediumUser,
     deterministic: !!DETERMINISTIC,
   },
 };

@@ -6,19 +6,17 @@ import { Fade } from 'react-awesome-reveal';
 import Section from '../components/Section';
 import Triangle from '../components/Triangle';
 import markdownRenderer from '../components/MarkdownRenderer';
-import { useAboutMeQuery } from '../queries/useAboutMeQuery';
 
 const About = () => {
-  const { markdown, profile } = useAboutMeQuery();
 
   return (
     <Section.Container id="about" Background={Background}>
       <Section.Header name="About me" icon="🙋‍♂️" label="person" />
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
         <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]} mt={2}>
-          <Fade direction="down" triggerOnce>
+          {/* <Fade direction="down" triggerOnce>
             <ReactMarkdown source={markdown} renderers={markdownRenderer} />
-          </Fade>
+          </Fade> */}
         </Box>
 
         <Box
@@ -26,7 +24,7 @@ const About = () => {
           style={{ maxWidth: '300px', margin: 'auto' }}
         >
           <Fade direction="right" triggerOnce>
-            <ProfilePicture mt={[4, 4, 0]} ml={[0, 0, 1]} {...profile} />
+            {/* <ProfilePicture mt={[4, 4, 0]} ml={[0, 0, 1]} {...profile} /> */}
           </Fade>
         </Box>
       </Flex>

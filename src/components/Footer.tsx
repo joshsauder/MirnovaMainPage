@@ -4,11 +4,10 @@ import { Text, Box, Flex } from 'rebass/styled-components';
 import { Fade } from 'react-awesome-reveal';
 import SocialLink from './SocialLink';
 import Link from './Link';
-import { useSiteQuery } from '../queries/useSiteQuery';
-import { CONTENTFUL_URL, GATSBY_URL, NETLIFY_URL } from '../utils/constants';
+import { GATSBY_URL, NETLIFY_URL } from '../utils/constants';
 
 const Footer = () => {
-  const { name, socialLinks } = useSiteQuery();
+  const name = "Mirnova";
 
   return (
     <Box p={[2, 3]} backgroundColor="primary" id="footer">
@@ -18,15 +17,13 @@ const Footer = () => {
             <span>{`${name} Portfolio - Powered by `}</span>
             <Link href={GATSBY_URL}>Gatsby</Link>
             <span>, </span>
-            <Link href={CONTENTFUL_URL}>Contentful</Link>
-            <span> and </span>
             <Link href={NETLIFY_URL}>Netlify</Link>{' '}
             <span role="img" aria-label="heart">
               ❤️
             </span>
           </TextWrapper>
         </Fade>
-        <Flex>
+        {/* <Flex>
           <Fade direction="right" triggerOnce cascade damping={0.5}>
             {socialLinks.map((sl) => (
               <Box mx={[2, 3]} fontSize={[4, 5]} key={sl.name}>
@@ -34,7 +31,7 @@ const Footer = () => {
               </Box>
             ))}
           </Fade>
-        </Flex>
+        </Flex> */}
       </FooterContainer>
     </Box>
   );

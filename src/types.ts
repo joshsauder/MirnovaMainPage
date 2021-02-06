@@ -30,21 +30,6 @@ export type SocialLink = {
   icon: IconName;
 };
 
-export type MediumPost = {
-  title: string;
-  text: string;
-  cover: string;
-  url: string;
-  date: string;
-  time: number;
-};
-
-export type MediumAuthor = {
-  id: string;
-  name: string;
-  username: string;
-};
-
 export type Landing = {
   name: string;
   roles: string[];

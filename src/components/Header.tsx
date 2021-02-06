@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { useScrollSection, useScrollSections } from 'react-scroll-section';
 import Link from './Link';
 import { capitalize } from '../utils/string';
-import { useHelmetQuery } from '../queries/useHelmetQuery';
 
 const Header = () => {
   const sections = useScrollSections();
@@ -36,20 +35,20 @@ const Header = () => {
 };
 
 const HomeLink = () => {
-  const { profile } = useHelmetQuery();
+  // const { profile } = useHelmetQuery();
   const { onClick } = useScrollSection('home');
 
   return (
     <Button onClick={onClick} variant="empty">
       <Flex justifyContent="center">
-        <Image
+        {/* <Image
           src={profile.bigIcon.src}
           height={['60px', '80px']}
           width={['60px', '80px']}
           alt="Portfolio Logo"
           p={2}
           css={{ borderRadius: '20px', cursor: 'pointer' }}
-        />
+        /> */}
       </Flex>
     </Button>
   );

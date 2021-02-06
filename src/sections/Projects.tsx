@@ -4,10 +4,8 @@ import Section from '../components/Section';
 import { CardContainer } from '../components/Card';
 import Triangle from '../components/Triangle';
 import Project from '../components/Project';
-import { useProjectsQuery } from '../queries/useProjectsQuery';
 
 const Projects = () => {
-  const projects = useProjectsQuery();
 
   return (
     <Section.Container id="projects" Background={Background}>
@@ -15,9 +13,9 @@ const Projects = () => {
 
       <CardContainer minWidth="350px">
         <Fade direction="down" cascade damping={0.5} triggerOnce>
-          {projects.map((p, i) => (
+          {/* {projects.map((p, i) => (
             <Project {...p} key={i} />
-          ))}
+          ))} */}
         </Fade>
       </CardContainer>
     </Section.Container>

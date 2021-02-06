@@ -6,12 +6,10 @@ import SocialLink from '../components/SocialLink';
 import { useScrollSection } from 'react-scroll-section';
 import MouseIcon from '../components/ScrollIcon';
 import Triangle from '../components/Triangle';
-import { useSiteQuery } from '../queries/useSiteQuery';
 
 const centerHorizontally = { marginRight: 'auto', marginLeft: 'auto' };
 
 const LandingPage = () => {
-  const { name, roles, socialLinks, deterministic } = useSiteQuery();
   const aboutSection = useScrollSection('about');
 
   return (
@@ -34,7 +32,7 @@ const LandingPage = () => {
         textAlign="center"
         style={centerHorizontally}
       >
-        <TextLoop interval={5000}>
+        {/* <TextLoop interval={5000}>
           {roles
             .sort(() => (deterministic ? 1 : Math.random() - 0.5))
             .map((text) => (
@@ -42,15 +40,15 @@ const LandingPage = () => {
                 {text}
               </Text>
             ))}
-        </TextLoop>
+        </TextLoop> */}
       </Heading>
 
       <Flex alignItems="center" justifyContent="center" flexWrap="wrap">
-        {socialLinks.map((sl) => (
+        {/* {socialLinks.map((sl) => (
           <Box mx={3} fontSize={[5, 6, 6]} key={sl.name}>
             <SocialLink {...sl} />
           </Box>
-        ))}
+        ))} */}
       </Flex>
 
       <MouseIcon onClick={aboutSection.onClick} />
