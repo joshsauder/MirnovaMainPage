@@ -6,6 +6,7 @@ import SocialLink from '../components/SocialLink';
 import { useScrollSection } from 'react-scroll-section';
 import MouseIcon from '../components/ScrollIcon';
 import Triangle from '../components/Triangle';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const centerHorizontally = { marginRight: 'auto', marginLeft: 'auto' };
 
@@ -21,7 +22,7 @@ const LandingPage = () => {
         fontSize={[6, 7]}
         mb={[3, 4, 5]}
       >
-        {`Hello, I'm ${name}!`}
+        Mirnova
       </Heading>
 
       <Heading
@@ -32,23 +33,15 @@ const LandingPage = () => {
         textAlign="center"
         style={centerHorizontally}
       >
-        {/* <TextLoop interval={5000}>
-          {roles
-            .sort(() => (deterministic ? 1 : Math.random() - 0.5))
-            .map((text) => (
-              <Text width={[300, 500]} key={text}>
-                {text}
-              </Text>
-            ))}
-        </TextLoop> */}
       </Heading>
 
       <Flex alignItems="center" justifyContent="center" flexWrap="wrap">
-        {/* {socialLinks.map((sl) => (
-          <Box mx={3} fontSize={[5, 6, 6]} key={sl.name}>
-            <SocialLink {...sl} />
+          <Box mx={3} fontSize={[5, 6, 6]} key="email">
+            <SocialLink url="mailto:intheclearapp@gmail.com" name="email" icon={'envelope'} />
           </Box>
-        ))} */}
+          <Box mx={3} fontSize={[5, 6, 6]} key="email">
+            <SocialLink url="https://github.com/joshsauder" name="github" icon={'github'} />
+          </Box>
       </Flex>
 
       <MouseIcon onClick={aboutSection.onClick} />
