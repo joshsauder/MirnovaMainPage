@@ -16,9 +16,9 @@ const theme: Theme = {
     gray: '#ddd',
     text: '#333333',
 
-    primary: '#7c37ad',
-    secondary: '#ff4081',
-    highlight: '#ff79b0',
+    primary: '#60D838',
+    secondary: '#1EB100',
+    highlight: '#FFCF4C',
   },
   queries: {
     xs: '@media screen and (max-width: 40em)',

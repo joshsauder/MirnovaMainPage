@@ -3,7 +3,6 @@ import { Fade } from 'react-awesome-reveal';
 import Section from '../components/Section';
 import { CardContainer } from '../components/Card';
 import Triangle from '../components/Triangle';
-import Project from '../components/Project';
 
 const Projects = () => {
 
