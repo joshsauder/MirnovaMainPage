@@ -15,7 +15,7 @@ const Header = () => {
         flexWrap="wrap"
         justifyContent="space-between"
         alignItems="center"
-        px={3}
+        p={3}
       >
         <HomeLink />
         <Flex mr={[0, 3, 5]}>
