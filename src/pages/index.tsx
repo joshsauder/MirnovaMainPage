@@ -10,8 +10,8 @@ const IndexPage = () => (
   <Layout>
     <Header />
     <Landing />
-    <About />
     <Projects />
+    <About />
     <Footer />
   </Layout>
 );

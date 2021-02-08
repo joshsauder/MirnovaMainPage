@@ -39,18 +39,11 @@ const HomeLink = () => {
   const { onClick } = useScrollSection('home');
 
   return (
-    <Button onClick={onClick} variant="empty">
-      <Flex justifyContent="center">
-        {/* <Image
-          src={profile.bigIcon.src}
-          height={['60px', '80px']}
-          width={['60px', '80px']}
-          alt="Portfolio Logo"
-          p={2}
-          css={{ borderRadius: '20px', cursor: 'pointer' }}
-        /> */}
-      </Flex>
-    </Button>
+    <Flex justifyContent="center" color="background" fontSize={[2,3]}>
+      <Link onClick={onClick}>
+          Mirnova
+      </Link>
+    </Flex>
   );
 };
 

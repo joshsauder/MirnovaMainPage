@@ -11,7 +11,7 @@ const About = () => {
 
   return (
     <Section.Container id="about" Background={Background}>
-      <Section.Header name="About me" icon="🙋‍♂️" label="person" />
+      <Section.Header name="About" icon="💡" label="info" />
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
         <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]} mt={2}>
           {/* <Fade direction="down" triggerOnce>

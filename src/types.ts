@@ -10,13 +10,10 @@ export type Favicon = {
 };
 
 export type Project = {
-  name: string;
+  title: string;
   description: string;
-  homepage: string;
-  repository: string;
-  type: string;
-  publishedDate: string;
-  logo: Image;
+  icon: string;
+  caption: string;
 };
 
 export type AboutMe = {

@@ -2,7 +2,7 @@ const about = require('./about.json');
 
 require('dotenv').config();
 
-const { ACCESS_TOKEN, SPACE_ID, ANALYTICS_ID, DETERMINISTIC } = process.env;
+const { ANALYTICS_ID, DETERMINISTIC } = process.env;
 
 const plugins = [
   'gatsby-plugin-react-helmet',

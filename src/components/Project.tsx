@@ -1,63 +1,57 @@
 import React from 'react';
-import SocialLink from '../components/SocialLink';
 import ImageLabel from './ImageLabel';
-import Hide from '../components/Hide';
-import { Box, Flex, Image, Text } from 'rebass/styled-components';
-import styled from 'styled-components';
+import { Flex, Image, Text } from 'rebass/styled-components';
 import { Project as ProjectType } from '../types';
 import { Card } from './Card';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { getIconDefinition } from '../utils/icon-loader';
+import { IconName } from '@fortawesome/fontawesome-svg-core';
+import theme from '../theme';
+
 
 type Props = ProjectType;
 
 const Project = ({
-  name,
+  title,
   description,
-  homepage,
-  repository,
-  type,
-  publishedDate,
-  logo,
-}: Props) => (
-  <Card p={0}>
-    <Flex style={{ height: CARD_HEIGHT }}>
-      <TextContainer>
-        <span>
-          <Title my={2} pb={1} color="text">
-            {name}
-          </Title>
-        </span>
-        <Text width={[1]} style={{ overflow: 'auto' }} color="text">
-          {description}
-        </Text>
-      </TextContainer>
+  icon,
+  caption,
+}: Props) => {
+  const iconDefinition = getIconDefinition(icon as IconName);
+  if (!iconDefinition) {
+    console.warn(`The icon "${icon}" was not properly loaded ...`);
+    return null;
+  }
 
-      <ImageContainer>
-        <ProjectImage {...logo} />
-        <ProjectTag>
-          <Flex
-            m={1}
-            style={{
-              float: 'right',
-            }}
-          >
-            <Box mx={1} fontSize={4}>
-              <SocialLink name="Repository" icon="github" url={repository} />
-            </Box>
-            <Box mx={1} fontSize={4}>
-              <SocialLink name="Homepage" icon="globe" url={homepage} />
-            </Box>
-          </Flex>
-          <ImageLabel bg="primary" color="white" position="bottom-right" round>
-            {type}
-          </ImageLabel>
-          <Hide query="md">
-            <ImageLabel bg="muted">{publishedDate}</ImageLabel>
-          </Hide>
-        </ProjectTag>
-      </ImageContainer>
-    </Flex>
-  </Card>
-);
+  return (
+    <Card p={0}>
+      <Flex style={{ height: CARD_HEIGHT }}>
+        <TextContainer>
+          <span>
+            <Title my={2} pb={1} color="text">
+              {title}
+            </Title>
+          </span>
+          <Text width={[1]} style={{ overflow: 'auto' }} color="text">
+            {description}
+          </Text>
+        </TextContainer>
+  
+        <ImageContainer>
+          <ProjectImage>
+            <FontAwesomeIcon icon={iconDefinition} title={icon} size="6x" color={theme.colors.secondary}/>
+          </ProjectImage>
+          <ProjectTag>
+            <ImageLabel bg="primary" color="white" position="bottom-right" round>
+              {caption}
+            </ImageLabel>
+          </ProjectTag>
+        </ImageContainer>
+      </Flex>
+    </Card>
+  );
+}
 
 const CARD_HEIGHT = '200px';
 
@@ -92,7 +86,7 @@ const ImageContainer = styled.div`
   }
 `;
 
-const ProjectImage = styled(Image)`
+const ProjectImage = styled.div`
   width: ${CARD_HEIGHT};
   height: ${CARD_HEIGHT};
   padding: 40px;
@@ -110,11 +104,11 @@ const ProjectTag = styled.div`
   position: relative;
   height: ${CARD_HEIGHT};
   top: calc(
-    -${CARD_HEIGHT} - 3.5px
-  ); /*don't know why I have to add 3.5px here ... */
+    -${CARD_HEIGHT}
+  );
 
   ${MEDIA_QUERY_SMALL} {
-    top: calc(-${CARD_HEIGHT} - 3.5px + (${CARD_HEIGHT} / 4));
+    top: calc(-${CARD_HEIGHT} + (${CARD_HEIGHT} / 4));
   }
 `;
 

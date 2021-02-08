@@ -5,20 +5,19 @@ import {
   IconDefinition,
 } from '@fortawesome/fontawesome-svg-core';
 import {
-  faMedium,
-  faTwitter,
   faGithub,
   prefix as brandPrefix,
 } from '@fortawesome/free-brands-svg-icons';
 import {
-  faGlobe,
   faEnvelope,
-  faCoffee,
+  faMoneyBillWave,
+  faTasks,
+  faSignLanguage,
   prefix as basePrefix,
 } from '@fortawesome/free-solid-svg-icons';
 
 export const loadIcons = () =>
-  library.add(faMedium, faTwitter, faGithub, faGlobe, faEnvelope, faCoffee);
+  library.add(faGithub, faEnvelope, faMoneyBillWave, faTasks, faSignLanguage);
 
 export const getIconDefinition = (
   iconName: IconName,

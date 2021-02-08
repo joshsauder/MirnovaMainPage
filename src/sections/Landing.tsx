@@ -1,16 +1,16 @@
 import React from 'react';
-import { Heading, Flex, Box, Text } from 'rebass/styled-components';
-import TextLoop from 'react-text-loop';
+import { Heading, Flex, Box, Image } from 'rebass/styled-components';
 import Section from '../components/Section';
 import SocialLink from '../components/SocialLink';
 import { useScrollSection } from 'react-scroll-section';
 import MouseIcon from '../components/ScrollIcon';
 import Triangle from '../components/Triangle';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import Logo from '../components/Logo/Mirnova.svg';
 
 const centerHorizontally = { marginRight: 'auto', marginLeft: 'auto' };
 
 const LandingPage = () => {
+  //const { profile } = useHelmetQuery();
   const aboutSection = useScrollSection('about');
 
   return (
@@ -20,19 +20,16 @@ const LandingPage = () => {
         as="h1"
         color="primary"
         fontSize={[6, 7]}
-        mb={[3, 4, 5]}
+        mb={[2, 3, 4]}
       >
-        Mirnova
-      </Heading>
-
-      <Heading
-        as="h2"
-        color="primary"
-        fontSize={[5, 6]}
-        mb={[3, 5]}
-        textAlign="center"
-        style={centerHorizontally}
-      >
+        <Image
+          src={Logo}
+          height={['210px', '280px']}
+          width={['210px', '280px']}
+          alt="Portfolio Logo"
+          p={2}
+          css={{ borderRadius: '20px', cursor: 'pointer' }}
+        /> 
       </Heading>
 
       <Flex alignItems="center" justifyContent="center" flexWrap="wrap">
