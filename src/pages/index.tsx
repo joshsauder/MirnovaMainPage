@@ -2,16 +2,16 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Header from '../components/Header';
 import Landing from '../sections/Landing';
-import About from '../sections/Projects';
-import Projects from '../sections/About';
+import About from '../sections/About';
+import Pricing from '../sections/Pricing';
 import Footer from '../components/Footer';
 
 const IndexPage = () => (
   <Layout>
     <Header />
     <Landing />
-    <Projects />
     <About />
+    <Pricing />
     <Footer />
   </Layout>
 );

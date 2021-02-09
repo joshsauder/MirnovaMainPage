@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Alphabet",
+        "text": "Learn the Alphabet A-Z for free!",
+        "price": "Free",
+        "image": ""
+    },
+    {
+        "title": "Basic Words",
+        "text": "You need to start somewhere so why not learn the basics!",
+        "price": "$0.99",
+        "image": ""
+    },
+    {
+        "title": "Foods",
+        "text": "Learn how to order dinner in ASL",
+        "price": "$0.99",
+        "image": ""
+    }
+]

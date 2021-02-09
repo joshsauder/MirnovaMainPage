@@ -32,3 +32,10 @@ export type Landing = {
   roles: string[];
   socialLinks: SocialLink[];
 };
+
+export type Pricing = {
+  title: string;
+  text: string;
+  price: string;
+  image: string;
+};
